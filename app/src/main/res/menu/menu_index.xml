@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zoomtk.circle.ui.IndexAct">
+    <group android:id="@+id/MAIN_MENU">
+        <item
+            android:id="@+id/pop_create"
+            android:title="@string/faqiqunliao" />
+        <item
+            android:id="@+id/pop_add"
+            android:title="@string/add_friends" />
+        <!--<item-->
+            <!--android:id="@+id/pop_scan"-->
+            <!--android:title="@string/scan" />-->
+        <item
+            android:id="@+id/pop_books"
+            android:title="@string/address_book" />
+        <item
+            android:id="@+id/pop_help"
+            android:title="@string/help" />
+    </group>
+
+</menu>

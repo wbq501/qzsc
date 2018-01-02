@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="circle">圈子</string>
+    <string name="discover">创客</string>
+    <string name="microstore">商城</string>
+    <string name="myinfo">我的</string>
+
+    <string name="zero">0</string>
+    <string name="store_manage">店铺管理</string>
+    <string name="store_name">店铺名称</string>
+    <string name="store_abstract">店铺简介</string>
+
+    <string name="message">消息</string>
+    <string name="trends">动态</string>
+    <string name="create">创建</string>
+    <string name="de_actionbar_system">"系统消息"</string>
+    <string name="main_customer">意见反馈</string>
+    <string name="de_actionbar_sub_defult">"聊天"</string>
+
+    <string name="faqiqunliao">发起群聊</string>
+    <string name="add_friends">添加朋友</string>
+    <string name="address_book">通讯录</string>
+    <string name="help">帮助与反馈</string>
+
+    <string name="xuanzequn">选择一个群</string>
+    <string name="I_have_entered">我加入的圈子</string>
+    <string name="trendsofcircle">圈子动态</string>
+    <string name="attentionandjoin">加入圈子</string>
+    <string name="chatongroup">群聊天</string>
+
+    <string name="i_say">我也说一句...</string>
+
+    <string name="mzw_not_any_data">没有任何内容</string>
+    <string name="hint_changepass">请在此设置密码，设置后你可以用手机号＋密码，登录本应用，还可以登陆与我们相关的网页和公众号</string>
+    <string name="digitsing">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+</resources>

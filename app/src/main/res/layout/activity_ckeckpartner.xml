@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/checkpartner_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:padding="15dp"
+            android:src="@mipmap/title_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:text="我的团队"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/team_add"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/add" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/checkpartner_rlpaixu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/find_h_sl"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#F5F5F5">
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_sousuo"
+            android:text="搜索"
+            android:textColor="#656565"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/checkpartner_rl3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/btn_search"
+            android:background="@drawable/shape_goodsmanage"
+            android:paddingLeft="5dp">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/shape_goodsmanage"
+                android:cursorVisible="true"
+                android:hint="请输入队员信息"
+                android:textColor="#ABABAB"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="999"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.zoomtk.circle.view.LoadingLayout
+        android:id="@+id/loadingview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="999"
+        ></com.zoomtk.circle.view.LoadingLayout>
+</LinearLayout>

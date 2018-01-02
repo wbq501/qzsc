@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height_48dp"
+        android:background="@color/title_bg">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:padding="15dp"
+            android:src="@mipmap/title_back" />
+
+        <TextView
+            android:id="@+id/store_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/store_manage"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/store_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@+id/discover_xx"
+        android:background="@drawable/shape_discover"
+        android:cursorVisible="true"
+        android:gravity="start"
+        android:maxLines="4"
+        android:minLines="1"
+        android:padding="10dp"
+        android:textCursorDrawable="@drawable/shape_cursor"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/update_store_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/store_edit_save_btn2"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+</LinearLayout>

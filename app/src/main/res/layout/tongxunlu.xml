@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height_48dp"
+        android:background="@color/title_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:padding="15dp"
+            android:src="@mipmap/title_back" />
+        <TextView
+            android:id="@+id/my_friends_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的好友(0)"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_add_new_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="添加\n好友"
+            android:textColor="@color/title_txt"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lv"
+            android:dividerHeight="0dp"
+            android:scrollbars="none"
+            android:layout_below="@+id/tongxunlu_rltitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@null">
+        </ListView>
+        <com.zoomtk.circle.view.NmView
+            android:id="@+id/nmView"
+            android:background="#ffffff"
+            android:layout_width="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"></com.zoomtk.circle.view.NmView>
+    </FrameLayout>
+</LinearLayout>

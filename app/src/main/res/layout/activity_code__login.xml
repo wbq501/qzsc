@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height_48dp"
+        android:background="@color/title_bg">
+
+        <ImageButton
+            android:id="@+id/login_backarrow"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:background="@color/title_bg"
+            android:padding="15dp"
+            android:src="@mipmap/title_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="3dp"
+            android:text="短信验证码登录"
+            android:textColor="@color/title_txt"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="手机号"/>
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:background="@null"
+            android:hint="你的手机号码"
+            android:inputType="number"
+            android:textColorHint="@color/tixingshuru"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linla"
+        android:background="@color/xiahuaxian"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rela1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linla">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="验证码"/>
+
+        <EditText
+            android:id="@+id/yanzheng"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toLeftOf="@+id/getcode"
+            android:layout_toRightOf="@+id/tv1"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:textColorHint="@color/tixingshuru"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:maxLength="6"
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/getcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:text="获取验证码"
+            android:textColor="#767676"
+            android:textSize="13sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rela1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_partner_button"
+        android:text="登录"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

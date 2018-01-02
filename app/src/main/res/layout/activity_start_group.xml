@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height_48dp"
+        android:background="@color/title_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:padding="15dp"
+            android:src="@mipmap/title_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="创建圈子拉人"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="确定"
+            android:textColor="@color/title_txt"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5">
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_goodsmanage"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tongxunlu_sousuo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/master_fangda"
+                android:layout_marginLeft="5dp"
+                android:background="#FFFFFF"
+                android:src="@mipmap/mcheck_fangda"
+                android:layout_centerVertical="true"
+                android:layout_width="19dp"
+                android:layout_height="19dp" />
+            <EditText
+                android:id="@+id/et_start_group_head"
+                android:textSize="16sp"
+                android:textColor="#ABABAB"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:padding="5dp"
+                android:hint="请输入好友名字"
+                android:layout_toRightOf="@+id/master_fangda"
+                android:paddingBottom="10dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/list_start_group"
+            android:dividerHeight="0dp"
+            android:scrollbars="none"
+            android:layout_below="@+id/tongxunlu_rltitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@null" />
+        <com.zoomtk.circle.view.NmView
+            android:id="@+id/nmView"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+</LinearLayout>

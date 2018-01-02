@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="title_blue">#596c96</color>
+    <color name="rb_green">#45C01A</color>
+    <color name="rb_gray">#969696</color>
+    <color name="rb_white">#ffffff</color>
+    <color name="rb_black">#666666</color>
+    <color name="rb_red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="red">#ee2e40</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="tabhost_text_black">#666666</color>
+    <color name="tabhost_text_white">#ffffff</color>
+    <color name="tabhost_bg_white">#ffffff</color>
+
+    <color name="invite_beijing_tanchu">#C6C6C6</color>
+    <color name="invite_title_tanchu">#BD5D66</color>
+    <color name="invite_beijing_tanhui">#FFFFFF</color>
+    <color name="invite_title_tanhui">#EE2E40</color>
+
+    <color name="title">#EE2E40</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#F5F5F5</color>
+    <color name="gray_shengqingtixian">#595959</color>
+    <color name="c5cc">#5c5c5c</color>
+    <color name="xiahuaxian">#dddddd</color>
+    <color name="tixingshuru">#c5c5c5</color>
+
+    <color name="page_bg_one">#ececec</color>
+    <color name="page_bg_two">#f5f5f5</color>
+    <color name="coche_color">#00000000</color>
+
+    <!--背景色点击状态-->
+    <color name="view_pressed">#18000000</color>
+    <!--主题辅助色（关键字提示）-->
+    <color name="theme_assist">#36be63</color>
+
+    <color name="app_list_item_color_pressed">#f5f5f5</color>
+    <color name="edit_comment_bg">#f6f6f6</color>
+
+    <color name="btn_comment_text_gray">#878787</color>
+    <color name="btn_comment_text_blue">#02baff</color>
+
+    <color name="line">#e6e6e6</color>
+    <color name="griditems_bg">#ffe8ecef</color>
+    <!--materdialog-->
+    <color name="card_background">#ffffff</color>
+
+    <color name="card_shadow">#10000000</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="window_background">#00000000</color>
+
+    <color name="black_de">#DE000000</color>
+    <!--王鑫添加部分-->
+    <color name="goods_details_bg">#dde2e1</color>
+    <color name="goods_details_line">#b7b7b7</color>
+    <color name="good_rb_change">#ffffff</color>
+    <color name="good_rb_normal">#000000</color>
+    <color name="sharemkmoeny_bg">#9a9a9a</color>
+    <color name="color_unselect">#F0F0F0</color>
+
+    <color name="color_f6">#f6f6f6</color>
+
+    <color name="color_gray">#F9F9F8</color>
+    <color name="text_color">#666666</color>
+    <color name="text_color2">#4e4e4e</color>
+    <color name="colorMainTitle">#ee2e40</color>
+    <color name="color_red">#FC4750</color>
+
+    <color name="press">#e8e8e8</color>
+    <color name="black_40">#282828</color>
+    <!--<color name="title_bg">#f8f8f8</color>-->
+    <!--<color name="title_txt">#505050</color>-->
+    <!--<color name="title_left">#da2f20</color>-->
+    <!--<color name="title_right">#666666</color>-->
+
+    <color name="title_bg">#EE2E40</color>
+    <color name="title_txt">#ffffff</color>
+    <color name="title_left">#EE2E40</color>
+    <color name="title_right">#EE2E40</color>
+</resources>

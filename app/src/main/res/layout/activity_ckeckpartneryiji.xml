@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/checkpartner_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:layout_centerVertical="true"
+            android:background="@color/title_bg"
+            android:padding="15dp"
+            android:src="@mipmap/title_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:text="我的团队"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/pk"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PK榜"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/mcheck_renshu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkpartner_rlpaixu"
+                android:background="#EE2E40">
+
+                <ImageView
+                    android:id="@+id/mcheck_touxiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/mchech_renshu_white01"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/mcheck_touxiang"
+                    android:text="我的团队人数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/mcheck_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/mcheck_touxiang"
+                    android:layout_below="@+id/mcheck_touxiang"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="50sp"
+                    />
+                <ImageView
+                    android:id="@+id/prompting1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/mcheck_touxiang"
+                    android:layout_toRightOf="@+id/mcheck_num"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@mipmap/prompting"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mcheck_rlxiaoshou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mcheck_renshu"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/mcheck_leijixiaoshou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="累计销售(元)"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/mcheck_xiaoshou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mcheck_leijixiaoshou"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="20dp"
+                    android:text="0.00"
+                    android:textColor="#EE2E40"
+                    android:textSize="20sp"/>
+                <ImageView
+                    android:id="@+id/prompting2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_below="@+id/mcheck_leijixiaoshou"
+                    android:layout_toRightOf="@+id/mcheck_xiaoshou"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@mipmap/prompting"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/mcheck_leiji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mcheck_rlxiaoshou"
+                android:background="#F5F5F5"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/mcheck_leijidingdanshu01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mcheck_leijidingdan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="累计订单数"/>
+
+                    <TextView
+                        android:id="@+id/mcheck_leijidingdanshu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/mcheck_leijidingdan"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="0"
+                        android:textColor="#595959"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/prompting3"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@+id/mcheck_leijidingdan"
+                        android:layout_toRightOf="@+id/mcheck_leijidingdanshu"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/prompting"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#E1E1E1"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mcheck_leijihuiyuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="累计队员数"/>
+
+                    <TextView
+                        android:id="@+id/mcheck_leijihuiyuanshu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mcheck_leijihuiyuan"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="0"
+                        android:textColor="#595959"
+                        android:textSize="20sp"/>
+                    <ImageView
+                        android:id="@+id/prompting4"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@+id/mcheck_leijihuiyuan"
+                        android:layout_toRightOf="@+id/mcheck_leijihuiyuanshu"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@mipmap/prompting"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/mcheck_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="15dp"
+                android:background="@drawable/shape_partner_button"
+                android:text="查看我的团队"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

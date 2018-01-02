@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/.gradle/
+/.idea/
+/build/
+/hs_err_pid15524.log
+/hs_err_pid21452.log
+/replay_pid15524.log
+/replay_pid21452.log

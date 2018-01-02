@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/twoinvite_titlerl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bg">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_size_medium"
+            android:layout_height="@dimen/image_size_medium"
+            android:padding="15dp"
+            android:src="@mipmap/title_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="店铺二维码"
+            android:textColor="@color/title_txt"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_imgbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:background="#E5E5E5"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
+            android:background="#E5E5E5">
+
+            <ImageButton
+                android:id="@+id/twoinvite_load"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#E5E5E5"
+                android:paddingBottom="5dp"
+                android:paddingTop="15dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/twoinvite_load"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/twoinvite_load"
+                android:layout_alignRight="@+id/twoinvite_load"
+                android:layout_below="@+id/twoinvite_load"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="保存至手机"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#E5E5E5">
+
+            <ImageButton
+                android:id="@+id/twoinvite_sharefriends"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#E5E5E5"
+                android:paddingBottom="5dp"
+                android:paddingTop="15dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/twoinvite_sharefriends"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/twoinvite_sharefriends"
+                android:layout_alignRight="@+id/twoinvite_sharefriends"
+                android:layout_below="@+id/twoinvite_sharefriends"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="朋友圈"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/twoinvite_im01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/lin_imgbtn"
+        android:layout_below="@id/twoinvite_titlerl"
+        android:layout_centerHorizontal="true"
+        android:background="#ee2e40"
+        android:scaleType="centerInside"
+        />
+</RelativeLayout>

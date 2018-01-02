@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height_48dp"
+            android:background="@color/title_bg">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/image_size_medium"
+                android:layout_height="@dimen/image_size_medium"
+                android:padding="15dp"
+                android:layout_marginLeft="-5dp"
+                android:src="@mipmap/title_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/trendsofcircle"
+                android:layout_centerInParent="true"
+                android:textColor="@color/title_txt"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/change"
+                android:layout_width="35dp"
+                android:layout_height="25dp"
+                android:paddingRight="5dp"
+                android:padding="0dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/bianji" />
+        </RelativeLayout>
+        <com.zoomtk.circle.view.DragTopLayout
+            android:id="@+id/dtDragLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:dtlCollapseOffset="0dp"
+            app:dtlOpen="true"
+            app:dtlOverDrag="false">
+            <include
+                layout="@layout/circle_head"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:background="@null" />
+            <include layout="@layout/circle_body" />
+        </com.zoomtk.circle.view.DragTopLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/push"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/circleshow_push" />
+    </FrameLayout>
+</FrameLayout>

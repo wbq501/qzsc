@@ -1,0 +1,8 @@
+ext {
+
+    android = [
+//            file:file("/Users/wbq501/AndroidStudioProjects/QZSC/QUANZIDIAN.key"),
+            file:file("QUANZIDIAN.key"),
+    ]
+
+}
