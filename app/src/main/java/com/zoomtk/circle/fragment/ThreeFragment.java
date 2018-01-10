@@ -20,6 +20,7 @@ import com.zoomtk.circle.R;
 import com.zoomtk.circle.activity.HelpAct;
 import com.zoomtk.circle.base.BaseFragment;
 import com.zoomtk.circle.base.BaseJson;
+import com.zoomtk.circle.base.BaseLog;
 import com.zoomtk.circle.base.BaseToast;
 import com.zoomtk.circle.im.adapter.ConversationListAdapterEx;
 import com.zoomtk.circle.im.ui.AddFriendsAct;
@@ -39,6 +40,7 @@ import io.rong.imkit.RongContext;
 import io.rong.imkit.RongIM;
 import io.rong.imkit.fragment.ConversationListFragment;
 import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Group;
 import io.rong.imlib.model.UserInfo;
 
 /**
@@ -171,6 +173,35 @@ public class ThreeFragment extends BaseFragment {
                 return getUserById(userId);
             }
         },true);
+//        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+//            @Override
+//            public UserInfo getUserInfo(String userId) {
+//                return getUserGroup(userId);
+//            }
+//        },true);
+    }
+
+    private UserInfo getUserGroup(String userId) {
+        Map<String,String> parms = new HashMap<>();
+        parms.put("token",token);
+        parms.put("id",userId);
+        HttpUtils.getFriend(parms, new RequestBack() {
+            @Override
+            public void success(BaseJson msg) throws Exception {
+                if (msg.getResultCode().equals(Config.SUCCESS_CODE)){
+                    com.zoomtk.circle.bean.UserInfo userInfo1 = gson.fromJson(gson.toJson(msg.getResult()), com.zoomtk.circle.bean.UserInfo.class);
+                    RongIM.getInstance().refreshGroupInfoCache(new Group(userInfo1.getId(),userInfo1.getReally_name(), Uri.parse(userInfo1.getAvatar())));
+                }else {
+                    BaseToast.ToastS(getActivity(),msg.getResultInfo());
+                }
+            }
+
+            @Override
+            public void error(String errormsg) {
+                BaseToast.ToastS(getActivity(),errormsg);
+            }
+        });
+        return null;
     }
 
     private UserInfo getUserById(String userId){

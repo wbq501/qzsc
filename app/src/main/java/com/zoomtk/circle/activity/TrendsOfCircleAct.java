@@ -1,5 +1,7 @@
 package com.zoomtk.circle.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -34,6 +36,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
 
 /**
  * 圈子动态
@@ -212,6 +215,7 @@ public class TrendsOfCircleAct extends BaseActivity{
 
     @OnClick({R.id.back,R.id.change,R.id.chatongroup})
     public void OnClick(View view){
+        Intent intent = null;
         switch (view.getId()){
             case R.id.back:
                 finish();
@@ -220,6 +224,7 @@ public class TrendsOfCircleAct extends BaseActivity{
 
                 break;
             case R.id.chatongroup:
+                RongIM.getInstance().startGroupChat((Context) TrendsOfCircleAct.this,group_id,group_name);
                 break;
         }
     }

@@ -18,6 +18,7 @@ import java.util.Map;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Group;
 import io.rong.imlib.model.UserInfo;
 
 /**
@@ -56,11 +57,40 @@ public class ConversationListActivity extends BaseActivity{
                 return getUserById(userId);
             }
         },true);
+//        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+//            @Override
+//            public UserInfo getUserInfo(String userId) {
+//                return getUserGroup(userId);
+//            }
+//        },true);
     }
 
     @Override
     public void initdata() {
 
+    }
+
+    private UserInfo getUserGroup(String userId) {
+        Map<String,String> parms = new HashMap<>();
+        parms.put("token",token);
+        parms.put("id",userId);
+        HttpUtils.getFriend(parms, new RequestBack() {
+            @Override
+            public void success(BaseJson msg) throws Exception {
+                if (msg.getResultCode().equals(Config.SUCCESS_CODE)){
+                    com.zoomtk.circle.bean.UserInfo userInfo1 = gson.fromJson(gson.toJson(msg.getResult()), com.zoomtk.circle.bean.UserInfo.class);
+                    RongIM.getInstance().refreshGroupInfoCache(new Group(userInfo1.getId(),userInfo1.getReally_name(), Uri.parse(userInfo1.getAvatar())));
+                }else {
+                    BaseToast.ToastS(ConversationListActivity.this,msg.getResultInfo());
+                }
+            }
+
+            @Override
+            public void error(String errormsg) {
+                BaseToast.ToastS(ConversationListActivity.this,errormsg);
+            }
+        });
+        return null;
     }
 
     private UserInfo getUserById(String userId){
@@ -73,7 +103,6 @@ public class ConversationListActivity extends BaseActivity{
                 if (msg.getResultCode().equals(Config.SUCCESS_CODE)){
                     com.zoomtk.circle.bean.UserInfo userInfo1 = gson.fromJson(gson.toJson(msg.getResult()), com.zoomtk.circle.bean.UserInfo.class);
                     RongIM.getInstance().refreshUserInfoCache(new UserInfo(userInfo1.getId(),userInfo1.getReally_name(),Uri.parse(userInfo1.getAvatar())));
-                    BaseLog.LogE("aaaaaaaa",userInfo1.getName());
                 }else {
                     BaseToast.ToastS(ConversationListActivity.this,msg.getResultInfo());
                 }
