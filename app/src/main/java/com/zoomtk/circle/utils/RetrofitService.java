@@ -262,7 +262,7 @@ public interface RetrofitService {
      */
     @POST("index.php?s=/api/User/getGroupList")
     @FormUrlEncoded
-    Observable<BaseJson> getGroupList(@FieldMap Map<String, String> map);
+    Observable<ResponseBody> getGroupList(@FieldMap Map<String, String> map);
 
     /**
      * 获取附近门店

@@ -33,34 +33,10 @@ public class ConversationListActivity extends BaseActivity{
 
     @Override
     public void init() {
-//        Map<String,Boolean> map = new HashMap<>();
-//        map.put(Conversation.ConversationType.PRIVATE.getName(),false);
-//        map.put(Conversation.ConversationType.GROUP.getName(),false);
-//        RongIM.getInstance().startConversationList(getApplicationContext(),map);
-//        RongIMClient.getInstance().getConversationList(new RongIMClient.ResultCallback<List<Conversation>>() {
-//            @Override
-//            public void onSuccess(List<Conversation> conversations) {
-//                String targetId = conversations.get(0).getTargetId();
-//                Conversation.ConversationType type = conversations.get(0).getConversationType();
-//                BaseToast.YToastL(ConversationListActivity.this,targetId);
-//            }
-//
-//            @Override
-//            public void onError(RongIMClient.ErrorCode errorCode) {
-//                BaseToast.YToastL(ConversationListActivity.this,errorCode.getMessage());
-//            }
-//        });
-
-        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
-            @Override
-            public UserInfo getUserInfo(String userId) {
-                return getUserById(userId);
-            }
-        },true);
 //        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
 //            @Override
 //            public UserInfo getUserInfo(String userId) {
-//                return getUserGroup(userId);
+//                return getUserById(userId);
 //            }
 //        },true);
     }
@@ -68,29 +44,6 @@ public class ConversationListActivity extends BaseActivity{
     @Override
     public void initdata() {
 
-    }
-
-    private UserInfo getUserGroup(String userId) {
-        Map<String,String> parms = new HashMap<>();
-        parms.put("token",token);
-        parms.put("id",userId);
-        HttpUtils.getFriend(parms, new RequestBack() {
-            @Override
-            public void success(BaseJson msg) throws Exception {
-                if (msg.getResultCode().equals(Config.SUCCESS_CODE)){
-                    com.zoomtk.circle.bean.UserInfo userInfo1 = gson.fromJson(gson.toJson(msg.getResult()), com.zoomtk.circle.bean.UserInfo.class);
-                    RongIM.getInstance().refreshGroupInfoCache(new Group(userInfo1.getId(),userInfo1.getReally_name(), Uri.parse(userInfo1.getAvatar())));
-                }else {
-                    BaseToast.ToastS(ConversationListActivity.this,msg.getResultInfo());
-                }
-            }
-
-            @Override
-            public void error(String errormsg) {
-                BaseToast.ToastS(ConversationListActivity.this,errormsg);
-            }
-        });
-        return null;
     }
 
     private UserInfo getUserById(String userId){

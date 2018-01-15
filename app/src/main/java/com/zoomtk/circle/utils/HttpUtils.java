@@ -261,10 +261,10 @@ public class HttpUtils {
      * @param parms
      * @param requestBack
      */
-    public static void getGroupList(Map<String, String> parms, final RequestBack requestBack) {
-        Observable<BaseJson> loginCode = RetrofitFactory.getInstence().API().getGroupList(getRequestparams(parms));
-        POST(loginCode, requestBack);
-    }
+//    public static void getGroupList(Map<String, String> parms, final RequestBack requestBack) {
+//        Observable<BaseJson> loginCode = RetrofitFactory.getInstence().API().getGroupList(getRequestparams(parms));
+//        POST(loginCode, requestBack);
+//    }
 
     /**
      * 登录要访问的红包接口
@@ -679,6 +679,17 @@ public class HttpUtils {
     public static void userstoreManage(Map<String, String> parms, final ResponseBack responseBack) {
         Observable<ResponseBody> userstoreManage = RetrofitFactory.getInstence().API().userstoreManage(getRequestparams(parms));
         POSTS(userstoreManage, responseBack);
+    }
+
+    /**
+     *
+     *
+     * @param parms
+     * @param responseBack
+     */
+    public static void getGroupList(Map<String, String> parms, final ResponseBack responseBack) {
+        Observable<ResponseBody> groupList = RetrofitFactory.getInstence().API().getGroupList(getRequestparams(parms));
+        POSTS(groupList, responseBack);
     }
 
     /**

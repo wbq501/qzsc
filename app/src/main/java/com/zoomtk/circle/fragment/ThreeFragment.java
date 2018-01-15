@@ -14,8 +14,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
+import com.google.gson.reflect.TypeToken;
 import com.zoomtk.circle.Config.Config;
 import com.zoomtk.circle.Interface.RequestBack;
+import com.zoomtk.circle.Interface.ResponseBack;
 import com.zoomtk.circle.R;
 import com.zoomtk.circle.activity.HelpAct;
 import com.zoomtk.circle.base.BaseFragment;
@@ -23,11 +25,15 @@ import com.zoomtk.circle.base.BaseJson;
 import com.zoomtk.circle.base.BaseLog;
 import com.zoomtk.circle.base.BaseToast;
 import com.zoomtk.circle.im.adapter.ConversationListAdapterEx;
+import com.zoomtk.circle.im.bean.GroupBean;
 import com.zoomtk.circle.im.ui.AddFriendsAct;
 import com.zoomtk.circle.im.ui.CreateCircle;
 import com.zoomtk.circle.im.ui.TongxunluAct;
 import com.zoomtk.circle.utils.HttpUtils;
 import com.zoomtk.circle.view.ThreeViewPager;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -173,26 +179,32 @@ public class ThreeFragment extends BaseFragment {
                 return getUserById(userId);
             }
         },true);
-//        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
-//            @Override
-//            public UserInfo getUserInfo(String userId) {
-//                return getUserGroup(userId);
-//            }
-//        },true);
+        RongIM.setGroupInfoProvider(new RongIM.GroupInfoProvider() {
+            @Override
+            public Group getGroupInfo(String groupId) {
+                return getGroupINfo(groupId);
+            }
+        },true);
     }
 
-    private UserInfo getUserGroup(String userId) {
+    private Group getGroupINfo(final String groupId) {
         Map<String,String> parms = new HashMap<>();
         parms.put("token",token);
-        parms.put("id",userId);
-        HttpUtils.getFriend(parms, new RequestBack() {
+        HttpUtils.getGroupList(parms, new ResponseBack() {
             @Override
-            public void success(BaseJson msg) throws Exception {
-                if (msg.getResultCode().equals(Config.SUCCESS_CODE)){
-                    com.zoomtk.circle.bean.UserInfo userInfo1 = gson.fromJson(gson.toJson(msg.getResult()), com.zoomtk.circle.bean.UserInfo.class);
-                    RongIM.getInstance().refreshGroupInfoCache(new Group(userInfo1.getId(),userInfo1.getReally_name(), Uri.parse(userInfo1.getAvatar())));
-                }else {
-                    BaseToast.ToastS(getActivity(),msg.getResultInfo());
+            public void success(Object o) throws Exception {
+                JSONObject object = new JSONObject(o.toString());
+                String resultCode = object.getString("resultCode");
+                if (resultCode.equals(Config.SUCCESS_CODE)){
+                    JSONArray jsonArray = object.getJSONArray("resultInfo");
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+                        String group_id = jsonObject.getString("group_id");
+                        if (group_id.equals(groupId)){
+                            RongIM.getInstance().refreshGroupInfoCache(new Group(group_id,jsonObject.getString("group_name"),Uri.parse(jsonObject.getString("groups_img"))));
+                            break;
+                        }
+                    }
                 }
             }
 
@@ -203,6 +215,7 @@ public class ThreeFragment extends BaseFragment {
         });
         return null;
     }
+
 
     private UserInfo getUserById(String userId){
         Map<String,String> parms = new HashMap<>();

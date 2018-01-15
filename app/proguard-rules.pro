@@ -164,6 +164,16 @@
 -keepclassmembers class fqcn.of.javascript.interface.for.webview {
     public *;
 }
+-keepattributes *Annotation*
+-keepattributes *JavascriptInterface*
+-keep public class org.mq.study.webview.DemoJavaScriptInterface{
+   public <methods>;
+}
+#假如是内部类，混淆如下：
+-keepattributes *JavascriptInterface*
+-keep public class org.mq.study.webview.webview.DemoJavaScriptInterface$InnerClass{
+    public <methods>;
+}
 -keepclassmembers class * extends android.webkit.webViewClient {
     public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
     public boolean *(android.webkit.WebView, java.lang.String);
